@@ -1,0 +1,31 @@
+global
+    daemon
+    maxconn 256
+
+defaults
+    mode http
+    timeout connect 5s
+    timeout client 30s
+    timeout server 30s
+    option http-server-close
+    errorfile 503 /etc/haproxy/errors/sorry.http
+
+frontend http_front
+    bind *:80
+    default_backend webapp_back
+
+backend webapp_back
+    balance roundrobin
+    option httpchk GET /health
+{{range service "webapp"}}
+      server {{.Node}}-{{.Port}} {{.Address}}:{{.Port}} check
+{{else}}
+    # No hay servidores webapp disponibles actualmente
+{{end}}
+
+listen stats
+    bind *:8404
+    stats enable
+    stats uri /stats
+    stats refresh 10s
+    stats show-legends

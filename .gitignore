@@ -1,0 +1,5 @@
+.vagrant/
+*.log
+node_modules/
+*.retry
+.DS_Store

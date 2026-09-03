@@ -1,0 +1,21 @@
+config:
+  target: "http://192.168.56.10"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+      name: "Carga baja"
+    - duration: 30
+      arrivalRate: 20
+      name: "Carga media"
+    - duration: 30
+      arrivalRate: 50
+      name: "Carga alta"
+    - duration: 60
+      arrivalRate: 50
+      rampTo: 500
+      name: "Carga extrema (rampa)"
+scenarios:
+  - name: "Peticiones al balanceador"
+    flow:
+      - get:
+          url: "/"

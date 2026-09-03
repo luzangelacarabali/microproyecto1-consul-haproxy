@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "webapp",
+    "port": 3000,
+    "check": {
+      "http": "http://localhost:3000/health",
+      "interval": "5s",
+      "timeout": "1s"
+    }
+  }
+}
