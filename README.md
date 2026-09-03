@@ -126,7 +126,9 @@ O si prefieres reaprovisionar solo una VM puntual:
 
 ```bash
 vagrant provision haproxy
-```
+```<img width="1854" height="1048" alt="image" src="https://github.com/user-attachments/assets/9165cee8-fe19-48f4-b648-c7b4f6f33f09" />
+
+
 
 ### 3. Confirma que las 3 VMs están corriendo
 
