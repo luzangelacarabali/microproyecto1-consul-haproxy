@@ -208,6 +208,10 @@ http://192.168.56.10/
 
 Vas a ver una tarjeta con el nombre del nodo y el puerto que respondió, cambiando de color según sea `web1` (azul) o `web2` (verde). Si refrescas y no ves cambios, prueba con `Ctrl+Shift+R` (recarga forzada sin caché) o abre una pestaña nueva — algunos navegadores reutilizan la conexión y no siempre disparan una petición nueva con un simple F5.
 
+<img width="937" height="1029" alt="image" src="https://github.com/user-attachments/assets/6ecae599-241c-45ce-930b-5f7e3e13c136" />
+
+<img width="753" height="822" alt="image" src="https://github.com/user-attachments/assets/1d5eb2a8-02c4-4fb8-b881-d6ab6f05a30e" />
+
 ### Paso 4 — El dashboard de estadísticas de HAProxy
 
 Desde tu navegador:
@@ -215,6 +219,8 @@ Desde tu navegador:
 ```
 http://192.168.56.10:8404/stats
 ```
+<img width="1854" height="1048" alt="Captura desde 2026-09-03 13-51-09" src="https://github.com/user-attachments/assets/f312b549-f5bb-415b-babb-e866a6d42bfd" />
+
 
 Ahí vas a ver el estado de cada servidor del backend (`UP` en verde si está sano), cuántas sesiones ha atendido cada uno, y estadísticas de tráfico en tiempo real — todo accesible desde tu máquina anfitriona, sin entrar a ninguna VM.
 
@@ -297,6 +303,8 @@ Con Node 20+ confirmado, instala Artillery globalmente:
 sudo npm install -g artillery
 artillery --version
 ```
+<img width="1854" height="1048" alt="Captura desde 2026-09-03 13-57-58" src="https://github.com/user-attachments/assets/998bb377-209f-4d50-b626-153a2cee47c8" />
+
 
 Y corre el archivo de escenarios que ya viene en el repo:
 
@@ -309,6 +317,8 @@ Esto ejecuta 4 fases de tráfico creciente: 5, 20 y 50 peticiones por segundo (e
 **Lo que deberías observar:** el sistema se mantiene sólido (0% de errores, latencias de pocos milisegundos) hasta aproximadamente 50 peticiones por segundo. A partir de ahí, en la fase de rampa, empiezan a aparecer errores `ETIMEDOUT` — ese es el punto real de saturación del sistema, donde los 4 procesos Node.js (cada uno single-threaded) ya no logran atender la demanda a tiempo.
 
 ---
+<img width="1854" height="1048" alt="Captura desde 2026-09-03 13-58-04" src="https://github.com/user-attachments/assets/24387723-ce93-4396-ba5b-2e532e3d9e48" />
+
 
 ## Apagar o eliminar el entorno
 
@@ -317,6 +327,7 @@ Si quieres apagar las VMs sin borrarlas (para prenderlas de nuevo más rápido d
 ```bash
 vagrant halt
 ```
+<img width="1165" height="153" alt="Captura desde 2026-09-03 14-30-23" src="https://github.com/user-attachments/assets/5a8b3fff-46a5-4569-824f-4a0906f421e1" />
 
 Para volver a prenderlas:
 
