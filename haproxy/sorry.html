@@ -1,12 +1,26 @@
+HTTP/1.1 503 Service Unavailable
+Content-Type: text/html; charset=utf-8
+Connection: close
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Servicio no disponible</title>
+<meta charset="UTF-8">
+<title>Servicio no disponible</title>
+<style>
+body{font-family:-apple-system,sans-serif;background-color:#fef2f2;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
+.card{background:white;border-radius:16px;padding:48px 64px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;border-top:8px solid #dc2626;max-width:420px;}
+h1{color:#dc2626;font-size:2.5rem;margin:0 0 8px 0;}
+p{color:#64748b;font-size:1.05rem;margin:8px 0;}
+.status{display:inline-block;background:#dc2626;color:white;padding:4px 14px;border-radius:20px;font-weight:bold;margin-top:16px;font-size:0.85rem;letter-spacing:0.5px;}
+</style>
 </head>
-<body style="font-family: sans-serif; text-align:center; margin-top: 80px;">
-  <h1>Lo sentimos 😔</h1>
-  <p>En este momento ningún servidor está disponible para atender tu solicitud.</p>
-  <p>Por favor intenta de nuevo en unos minutos.</p>
+<body>
+<div class="card">
+<h1>Lo sentimos &#128532;</h1>
+<p>En este momento ning&uacute;n servidor est&aacute; disponible para atender tu solicitud.</p>
+<p>Por favor intenta de nuevo en unos minutos.</p>
+<span class="status">503 SERVICE UNAVAILABLE</span>
+</div>
 </body>
 </html>
