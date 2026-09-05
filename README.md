@@ -357,8 +357,3 @@ vagrant up
 4. **Página de disculpas**: si ningún backend está disponible, HAProxy responde con un `503` y una página personalizada (`haproxy/sorry.html`).
 5. **Pruebas de carga con Artillery**: 4 escenarios que caracterizan el sistema desde tráfico bajo hasta el punto de quiebre real (entre 150-230 req/s).
 
-
-## Prueba realizada por Brandon
-
-Proyecto ejecutado mediante Vagrant con tres máquinas virtuales:
-web1, web2 y haproxy.
